@@ -69,3 +69,14 @@ Isolation totale du trafic sensible.
 Automatisation complète via les Playbooks Ansible.
 
 Évolutivité facilitée par l'ajout dynamique d'hôtes dans le fichier hosts_panasonic_vpn.
+
+7. Compétences et Profil Professionnel
+Ce laboratoire a été conçu pour démontrer des compétences pratiques alignées avec les exigences des rôles suivants :
+
+Security Operations Engineer (SecOps) : Maîtrise de la surveillance continue et de la gestion des actifs.
+
+Threat Detection & Incident Response (TDIR) : Intégration de solutions comme Wazuh pour l'analyse des menaces en temps réel.
+
+Blue Team Engineer : Isolation réseau, sécurisation des accès SSH et automatisation de la défense.
+
+Ce projet témoigne de mon expérience dans la mise en place d'infrastructures sécurisées, l'automatisation via Ansible et la gestion des flux de logs, compétences clés pour un ingénieur en cybersécurité
