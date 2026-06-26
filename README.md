@@ -1,4 +1,4 @@
-# 🛡️ Laboratoire personnel : Infrastructure & Automation
+🛡️ Laboratoire personnel : Infrastructure & Automation
 
 Bienvenue dans le dépôt officiel de mon laboratoire de cybersécurité. Ce projet documente la mise en place d'une infrastructure automatisée dédiée à l'analyse réseau, au monitoring et à la défense (Blue Team).
 
@@ -30,37 +30,31 @@ sudo wg-quick up wg0
 
 # Vérification de l'interface
 ip a show wg0
-## ⚙️ 3. Gestion des Inventaires (Ansible)
-
+⚙️ 3. Gestion des Inventaires (Ansible)
 Global Inventory (hosts) : Topologie physique (10.0.0.x).
 VPN Inventory (hosts_panasonic_vpn) : Nœuds via tunnel (10.10.0.x).
 
 Test de connectivité :
 
-```bash
+Bash
 ansible lab_servers -i hosts_panasonic_vpn -m ping
 Résultat : SUCCESS => { "changed": false, "ping": "pong" }
 
-## 🛡️ 4. Sécurisation (SSH)
-
+🛡️ 4. Sécurisation (SSH)
 Automatisation sans mot de passe :
 
-```bash
+Bash
 # Génération et déploiement des clés
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
 ssh-copy-id kali@10.10.0.1
-
 📈 5. Intégration Wazuh
 Le système Wazuh est intégré via le VPN (10.10.0.1) pour une intégrité optimale des logs.
 
-## 💼 Compétences & Profil
+💼 Compétences & Profil
 SecOps Engineer : Surveillance et gestion d'actifs.
 
 TDIR : Analyse des menaces en temps réel.
 
 Blue Team : Isolation réseau et automatisation.
 
-Maintenu par Youssef Ghraba 
-
-
----
+Maintenu par Youssef Ghraba
