@@ -61,3 +61,6 @@ TDIR : Analyse des menaces en temps réel.
 Blue Team : Isolation réseau et automatisation.
 
 Maintenu par Youssef Ghraba
+
+## 📝 Rapports complémentaires
+- [Consulter le rapport d'évolution détaillé](docs/mise%20a%20jour%20labo.md)
