@@ -395,6 +395,15 @@ ssh -t kali@172.27.172.52 "sudo lynis audit system --quick" > rapport_securite_k
 
 L'analyse du rapport Lynis a fait apparaître deux avertissements (`WARNING`), corrigés comme suit :
 
+## 📑 Annexes et Audit de Sécurité
+
+Les résultats détaillés de l'audit de durcissement système (Hardening) réalisés avec **Lynis** sont disponibles pour consultation technique :
+
+- [📄 Rapport complet d'audit Lynis (Kali Linux)](rapport_securite_kali.txt)
+
+> *Note : Cet audit a permis d'identifier les points critiques du système. Les remédiations appliquées sont documentées dans la section 7 du présent rapport.*
+
+
 ### 6.1 Avertissement — Permissions du dossier `/etc/sudoers.d`
 
 **Constat Lynis :**
