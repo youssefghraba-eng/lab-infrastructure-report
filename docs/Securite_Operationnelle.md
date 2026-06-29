@@ -67,10 +67,6 @@ L'objectif pédagogique et technique est de simuler un environnement réel de su
 
 ---
 
-<p align="center">
-  <img src="../images/image_bba957.png" alt="Architecture du Laboratoire SOC" width="700">
-</p>
-
 ## 🏗️ Partie 1 — Préparation du centre de commande (Ubuntu Server)
 
 ### 1.1 Mise à jour du système et outils de base
