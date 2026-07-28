@@ -272,6 +272,9 @@ Wazuh v4.8.2 - Wazuh Inc.
 | Parrot OS | Agent | 4.8.2 | 🟢 Actif / Connecté |
 | Kali Linux | Agent | 4.8.2 | 🟢 Actif / Connecté |
 
+<img width="1907" height="727" alt="image" src="https://github.com/user-attachments/assets/e94f025d-504d-4def-971e-41e446a1b70d" />
+
+
 ---
 
 ## 7. Mise en place d'un tunnel réseau pour le premier test d'attaque
