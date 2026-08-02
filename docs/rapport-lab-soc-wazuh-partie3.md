@@ -213,6 +213,12 @@ sudo tailscale up
 | Tunnel Tailscale (Kali ↔ Manager ↔ Ubuntu) | ✅ Opérationnel |
 | Proxmox | ⏸️ Non traité — rôle prévu ultérieurement |
 
+<img width="1917" height="766" alt="Capture d&#39;écran 2026-08-01 195930" src="https://github.com/user-attachments/assets/123d0c6c-51cc-47a7-b735-25d89f127687" />
+
+<img width="1912" height="1088" alt="Capture d&#39;écran 2026-08-01 200412" src="https://github.com/user-attachments/assets/79aed92b-d7eb-45b5-ac86-43bf883f527a" />
+
+
+
 **Bilan :** la phase de **construction du laboratoire est achevée**. Le SOC Home Lab dispose désormais d'une supervision centralisée (Wazuh), d'un pare-feu périmétrique (OPNsense), d'une automatisation de déploiement (Ansible) et d'une connectivité inter-hyperviseurs fiable (Tailscale). Le projet entre maintenant dans sa phase de **démonstration offensive/défensive**.
 
 ---
