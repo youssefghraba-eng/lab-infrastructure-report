@@ -31,6 +31,9 @@ net.probe on
 net.show
 ```
 
+<img width="1042" height="393" alt="Capture d&#39;écran 2026-08-03 010426" src="https://github.com/user-attachments/assets/7f3433c2-0c6f-403f-96c5-c177c2ccfdf3" />
+
+
 ### 2.2 Résultat observé
 
 Aucun autre appareil du lab (Manager, Ubuntu) n'apparaissait dans la découverte réseau de Bettercap via l'interface `tailscale0`.
@@ -109,6 +112,7 @@ Les échecs d'authentification apparaissent bien dans le fichier local.
 | 5503 | Échec d'authentification PAM (`PAM: User login failed`) | 5 | — |
 
 ✅ **Résultat :** la détection des tentatives de brute-force SSH est pleinement opérationnelle sur Debian 13.
+
 
 ---
 
@@ -254,6 +258,7 @@ net.sniff on
 ```
 
 ✅ **Résultat :** l'attaque cible avec succès Ubuntu Server (`192.168.56.26`), avec interception bidirectionnelle du trafic (`fullduplex`).
+![Uploading image.png…]()
 
 ---
 
