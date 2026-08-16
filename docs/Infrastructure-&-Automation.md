@@ -83,10 +83,6 @@ Le système **Wazuh** est intégré via le VPN (`10.10.0.1`) pour une intégrit�
 
 ---
 
-## 📝 Rapports complémentaires
 
-- [Consulter le rapport d'évolution détaillé](docs/mise%20a%20jour%20labo.md)
-
----
 
 Maintenu par **Youssef Ghraba**
