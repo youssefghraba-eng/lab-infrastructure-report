@@ -113,6 +113,7 @@ Les échecs d'authentification apparaissent bien dans le fichier local.
 
 ✅ **Résultat :** la détection des tentatives de brute-force SSH est pleinement opérationnelle sur Debian 13.
 
+<img width="1903" height="1059" alt="Capture d&#39;écran 2026-08-15 195201" src="https://github.com/user-attachments/assets/1d5ed248-4906-4742-a8e3-9320f30372ee" />
 
 ---
 
@@ -258,7 +259,9 @@ net.sniff on
 ```
 
 ✅ **Résultat :** l'attaque cible avec succès Ubuntu Server (`192.168.56.26`), avec interception bidirectionnelle du trafic (`fullduplex`).
-![Uploading image.png…]()
+
+<img width="1917" height="1004" alt="image" src="https://github.com/user-attachments/assets/30f2635c-868e-4b86-8909-550f67d87b5d" />
+
 
 ---
 
