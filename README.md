@@ -6,7 +6,7 @@
 
 ## 📌 Introduction & Overview
 
-Ce dépôt documente la conception, la construction et l'exploitation d'un **laboratoire de cybersécurité interconnecté**, nommé **المدرعة النووية**.
+Ce dépôt documente la conception, la construction et l'exploitation d'un **laboratoire de cybersécurité interconnecté**.
 
 L'objectif du projet est d'adopter une **approche duale (Red Teaming vs Blue Teaming)** afin de comprendre le cycle de vie complet d'une cyberattaque :
 
