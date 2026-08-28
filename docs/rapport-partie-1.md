@@ -63,8 +63,8 @@ Afin de valider le bon fonctionnement des règles de pare-feu et de vérifier la
 
 ![Vue en direct des journaux du pare-feu OPNsense](images/01-opnsense-firewall-live-view.png)
 
-<img width="1896" height="940" alt="Capture d&#39;écran 2026-08-29 001707" src="https://github.com/user-attachments/assets/9ea710cc-e133-4816-a91f-434330ea1c9f" />
 
+<img width="1907" height="998" alt="Capture d&#39;écran 2026-08-29 005035" src="https://github.com/user-attachments/assets/8e788c9b-de46-4370-95fd-67e68bdd199a" />
 
 <img width="1908" height="991" alt="Capture d&#39;écran 2026-08-29 001535" src="https://github.com/user-attachments/assets/c1e1d5a4-9c1c-47aa-97e8-7c9e0ec0cbc1" />
 
