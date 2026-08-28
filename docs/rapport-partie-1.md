@@ -62,6 +62,15 @@ Le test ci-dessus confirme l'établissement réussi d'une route statique persist
 Afin de valider le bon fonctionnement des règles de pare-feu et de vérifier la cohérence du trafic autorisé entre zones, une analyse en direct des journaux du pare-feu a été réalisée via l'interface OPNsense.
 
 ![Vue en direct des journaux du pare-feu OPNsense](images/01-opnsense-firewall-live-view.png)
+
+<img width="1896" height="940" alt="Capture d&#39;écran 2026-08-29 001707" src="https://github.com/user-attachments/assets/9ea710cc-e133-4816-a91f-434330ea1c9f" />
+
+
+<img width="1908" height="991" alt="Capture d&#39;écran 2026-08-29 001535" src="https://github.com/user-attachments/assets/c1e1d5a4-9c1c-47aa-97e8-7c9e0ec0cbc1" />
+
+
+
+
 *Figure 1 — Vue en direct des journaux du pare-feu OPNsense : trafic autorisé entre la zone LAN et la zone DMZ.*
 
 Cette capture illustre le flux de connexions TCP autorisées entre les interfaces LAN, WLAN et la zone DMZ, confirmant que la segmentation réseau et les règles de pare-feu fonctionnent conformément à la conception établie.
