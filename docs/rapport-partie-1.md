@@ -27,6 +27,9 @@ Cette phase a consisté à établir la fondation technique du laboratoire : un e
 
 ### 2.1 Virtualisation & Zonage Réseau
 
+<img width="1907" height="998" alt="Capture d&#39;écran 2026-08-29 005035" src="https://github.com/user-attachments/assets/f2459cf7-f46a-4b64-a9cb-ca5553a4521a" />
+
+
 | Élément | Détails |
 |---|---|
 | **Environnement de virtualisation** | Mise en place de la plateforme **Hyper-V** pour la construction et la gestion de l'infrastructure virtuelle du laboratoire ainsi que la préparation des systèmes cibles |
@@ -61,17 +64,10 @@ Le test ci-dessus confirme l'établissement réussi d'une route statique persist
 
 Afin de valider le bon fonctionnement des règles de pare-feu et de vérifier la cohérence du trafic autorisé entre zones, une analyse en direct des journaux du pare-feu a été réalisée via l'interface OPNsense.
 
-![Vue en direct des journaux du pare-feu OPNsense](images/01-opnsense-firewall-live-view.png)
-
-
-<img width="1907" height="998" alt="Capture d&#39;écran 2026-08-29 005035" src="https://github.com/user-attachments/assets/8e788c9b-de46-4370-95fd-67e68bdd199a" />
-
-<img width="1908" height="991" alt="Capture d&#39;écran 2026-08-29 001535" src="https://github.com/user-attachments/assets/c1e1d5a4-9c1c-47aa-97e8-7c9e0ec0cbc1" />
-
-
-
-
 *Figure 1 — Vue en direct des journaux du pare-feu OPNsense : trafic autorisé entre la zone LAN et la zone DMZ.*
+
+<img width="1908" height="991" alt="Capture d&#39;écran 2026-08-29 001535" src="https://github.com/user-attachments/assets/7e6ecd0b-0808-49c6-a6b4-d44daaf9233e" />
+
 
 Cette capture illustre le flux de connexions TCP autorisées entre les interfaces LAN, WLAN et la zone DMZ, confirmant que la segmentation réseau et les règles de pare-feu fonctionnent conformément à la conception établie.
 
