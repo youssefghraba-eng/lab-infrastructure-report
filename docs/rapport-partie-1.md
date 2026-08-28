@@ -96,16 +96,27 @@ Cette deuxième phase avait pour objectif de déployer un leurre (honeypot) dest
 Le serveur DMZ hébergeant le honeypot a été équipé d'un agent Wazuh, permettant une remontée centralisée des événements vers le tableau de bord Wazuh SIEM aux côtés des autres points de terminaison du laboratoire (pare-feu OPNsense inclus).
 
 ![Tableau de bord Wazuh - Agents actifs](images/02-wazuh-agents-dashboard.png)
+
+<img width="1910" height="802" alt="Capture d&#39;écran 2026-08-29 005638" src="https://github.com/user-attachments/assets/2c3bfd7d-4de2-460e-931d-db8bfd707829" />
+
 *Figure 2 — Tableau de bord Wazuh : 3 agents actifs, incluant Ubuntu-DMZ-Server et OPNsense-firewall.*
 
 Le tableau de bord confirme le statut actif de l'ensemble des agents déployés, avec une répartition claire des systèmes surveillés (Ubuntu, BSD/OPNsense) et une visibilité centralisée sur l'état de santé du parc.
 
 ![Journal des événements de sécurité Wazuh](images/03-wazuh-security-events.png)
+
+<img width="1901" height="806" alt="Capture d&#39;écran 2026-08-29 005733" src="https://github.com/user-attachments/assets/7f425227-0cc7-49cc-a621-f2e47002a549" />
+
+
 *Figure 3 — Journal des événements de sécurité détectés sur Ubuntu-DMZ-Server (authentifications SSH, sessions PAM, anomalies de vérification racine).*
 
 Sur une fenêtre de 24 heures, **29 événements** ont été capturés sur le serveur DMZ, incluant des réussites d'authentification SSH, des ouvertures/fermetures de session PAM et des alertes de détection d'anomalie basées sur l'hôte — validant la capacité du SIEM à collecter et corréler les événements liés aux tentatives d'intrusion sur le honeypot.
 
 ![Journaux bruts du honeypot Cowrie](images/04-cowrie-honeypot-logs.png)
+
+<img width="1917" height="1138" alt="Capture d&#39;écran 2026-08-29 005851" src="https://github.com/user-attachments/assets/f9487397-b524-4b50-b0fe-4afcdc0ee063" />
+
+
 *Figure 4 — Journaux bruts du honeypot Cowrie (terminal) : trace complète d'une session d'attaque simulée, de la connexion à la fermeture.*
 
 Cette capture illustre le niveau de détail capturé par le honeypot : établissement de la session SSH, tentative d'authentification, ouverture d'un shell émulé, exécution de commandes et fermeture de la connexion — autant de données exploitables pour l'analyse comportementale des attaquants simulés.
