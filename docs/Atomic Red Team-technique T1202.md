@@ -1,4 +1,4 @@
-# 📊 Enterprise SOC Lab 2026 — Rapport d'Avancement · Partie 2
+# 📊 Enterprise SOC Lab 2026 — Atomic Red Team----technique T1202
 
 ![Status](https://img.shields.io/badge/status-simulation%20T1202%20termin%C3%A9e-success)
 ![Focus](https://img.shields.io/badge/focus-Atomic%20Red%20Team%20%7C%20TDIR-critical)
@@ -11,7 +11,7 @@
 
 ## 📌 1. Introduction & Objectifs
 
-Dans le cadre du développement de mes compétences en ingénierie de détection et d'investigation d'incidents (**TDIR**), j'ai mis en place et testé un environnement de laboratoire personnel durci, reposant sur **Windows Server Core**. L'objectif de ce travail est de simuler des techniques d'attaque réelles documentées dans le référentiel **Atomic Red Team**, en ciblant spécifiquement la technique **T1202 — Indirect Command Execution**.
+Dans le cadre du développement de mes compétences en ingénierie de détection et d'investigation d'incidents (**TDIR**), j'ai mis en place et testé un environnement de laboratoire personnel, reposant sur **Windows Server Core**. L'objectif de ce travail est de simuler des techniques d'attaque réelles documentées dans le référentiel **Atomic Red Team**, en ciblant spécifiquement la technique **T1202 — Indirect Command Execution**.
 
 Cette expérimentation vise à :
 - Analyser le comportement des outils système natifs de Windows détournés à des fins offensives ;
@@ -73,6 +73,11 @@ T1202-Test-Success
 - **Résultat** — le texte s'est affiché à l'écran, démontrant comment un attaquant peut exploiter un outil système légitime pour exécuter des commandes furtives sans appel direct et conventionnel à `cmd.exe`.
 
 #### 🔍 Détection via Wazuh SIEM
+
+<img width="1906" height="865" alt="Capture d&#39;écran 2026-09-25 201238" src="https://github.com/user-attachments/assets/0c720876-1250-41a4-8b06-faeeb9694995" />
+
+<img width="1912" height="1002" alt="Capture d&#39;écran 2026-09-25 202910" src="https://github.com/user-attachments/assets/bbbc1649-7d88-45a3-b56d-996c7b7186d0" />
+
 
 Wazuh a capturé la simulation avec une précision totale.
 
@@ -210,13 +215,5 @@ Ce résultat démontre une nouvelle fois la robustesse architecturale de Server 
 
 ---
 
-## 🚀 4. Prochaines Étapes
-
-- [ ] Investiguer l'angle mort de détection identifié sur `conhost.exe` (vérification des journaux Suricata / trafic réseau associé)
-- [ ] Étendre les tests Atomic Red Team à d'autres techniques de la matrice ATT&CK (T1218 — Signed Binary Proxy Execution, T1055 — Process Injection)
-- [ ] Formaliser un jeu de règles Wazuh personnalisées couvrant l'ensemble des techniques testées
-- [ ] Documenter les résultats dans un tableau de correspondance MITRE ATT&CK ↔ Règles de détection Wazuh
-
----
 
 📎 [Retour au README principal du projet](../README.md) · 🔗 [github.com/youssefghraba-eng](https://github.com/youssefghraba-eng)
