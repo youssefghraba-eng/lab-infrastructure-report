@@ -146,6 +146,15 @@ cd C:\AtomicTests
 | Sysmon (hôte) | 100204 | 12 | Requête DNS vers TLD suspect |
 | Suricata (réseau) | 100300 | 12 | Tunneling DNS détecté |
 
+<img width="1908" height="772" alt="Capture d&#39;écran 2026-09-27 140921" src="https://github.com/user-attachments/assets/98f82096-5c47-4bb9-825d-abd8735d9c71" />
+<img width="1915" height="1000" alt="Capture d&#39;écran 2026-09-27 140905" src="https://github.com/user-attachments/assets/387da2d8-f75e-4eb6-8a3f-2d4415efb8f8" />
+<img width="1917" height="991" alt="Capture d&#39;écran 2026-09-27 140839" src="https://github.com/user-attachments/assets/52e147fa-7808-481b-8243-d8bef1ed5478" />
+<img width="1917" height="837" alt="Capture d&#39;écran 2026-09-27 140823" src="https://github.com/user-attachments/assets/640ca439-1846-4264-81c6-cc9f3b1ee7f5" />
+<img width="1917" height="941" alt="Capture d&#39;écran 2026-09-27 140751" src="https://github.com/user-attachments/assets/b4885109-46b9-4ce7-95b6-652cece14791" />
+<img width="1911" height="852" alt="Capture d&#39;écran 2026-09-27 140732" src="https://github.com/user-attachments/assets/e2da0262-fd1d-427c-8274-ecdfdeda1985" />
+<img width="1917" height="1057" alt="Capture d&#39;écran 2026-09-27 134549" src="https://github.com/user-attachments/assets/a7559463-f398-40fe-b5f7-aeb029ea9776" />
+
+
 **Lecture de l'alerte HOST (Rule 100204) :**
 
 | Champ | Valeur |
@@ -242,7 +251,25 @@ Attaquant (type APT) → Email de phishing → Service RH
 [7] Retour à [1]
 ```
 
-### 5.3 Exécution (Atomic Red Team officiel)
+### 5.3 Comparaison Test #1 vs Test #2
+
+| Critère | Test #1 — Volume | Test #2 — Beaconing |
+|---|---|---|
+| Concept | Envoyer beaucoup de requêtes | Envoyer régulièrement |
+| Volume | 1000+ requêtes | 10–60 requêtes |
+| Durée | 5–10 minutes | 30 min à 30 jours (réel) |
+| Pattern | Rafale (burst) | Régulier + jitter |
+| Détection | Seuil (threshold) | Motif temporel (CV) |
+| Facilité | ✅ Facile | ❌ Difficile |
+| Règle | 100203 (Level 12) | 100205–100207 (Level 12–14) |
+| MITRE | T1071.004 | T1071.004 + T1571 |
+
+
+### 5.4<img width="1885" height="1005" alt="Capture d&#39;écran 2026-10-06 195717" src="https://github.com/user-attachments/assets/1a287115-84d8-495f-b9c7-3125812f07fa" />
+<img width="1913" height="997" alt="Capture d&#39;écran 2026-10-06 194918" src="https://github.com/user-attachments/assets/f11c8dc1-461e-4732-889f-af206ac1bd73" />
+<img width="1603" height="1011" alt="Capture d&#39;écran 2026-10-06 194301" src="https://github.com/user-attachments/assets/4c180bc8-8567-4447-b37e-ba7ca96c3940" />
+<img width="1602" height="1015" alt="Capture d&#39;écran 2026-10-06 193826" src="https://github.com/user-attachments/assets/b8993293-9723-4782-bbb3-79d527c6ec19" />
+ Exécution (Atomic Red Team officiel)
 
 ```powershell
 New-Item -ItemType Directory -Path "C:\AtomicRedTeam\T1071.004\src" -Force
@@ -262,20 +289,15 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
   -RunTime 5
 ```
 
-### 5.4 Comparaison Test #1 vs Test #2
-
-| Critère | Test #1 — Volume | Test #2 — Beaconing |
-|---|---|---|
-| Concept | Envoyer beaucoup de requêtes | Envoyer régulièrement |
-| Volume | 1000+ requêtes | 10–60 requêtes |
-| Durée | 5–10 minutes | 30 min à 30 jours (réel) |
-| Pattern | Rafale (burst) | Régulier + jitter |
-| Détection | Seuil (threshold) | Motif temporel (CV) |
-| Facilité | ✅ Facile | ❌ Difficile |
-| Règle | 100203 (Level 12) | 100205–100207 (Level 12–14) |
-| MITRE | T1071.004 | T1071.004 + T1571 |
-
 ### 5.5 Preuve d'exécution — Sysmon côté WIN-CLIENT
+
+
+<img width="1917" height="1198" alt="Capture d&#39;écran 2026-10-11 220833" src="https://github.com/user-attachments/assets/5767e8f6-b505-4071-9b23-9bf6289cfc4f" />
+<img width="1885" height="1005" alt="Capture d&#39;écran 2026-10-06 195717" src="https://github.com/user-attachments/assets/3c3c871a-ff5c-49ea-80ab-0800352a60f6" />
+<img width="1913" height="997" alt="Capture d&#39;écran 2026-10-06 194918" src="https://github.com/user-attachments/assets/c2a04731-b5c3-4a86-948c-61204f16ef3b" />
+<img width="1603" height="1011" alt="Capture d&#39;écran 2026-10-06 194301" src="https://github.com/user-attachments/assets/a1ef4e9a-dc7a-49be-83ee-7f1e7e2bde17" />
+<img width="1602" height="1015" alt="Capture d&#39;écran 2026-10-06 193826" src="https://github.com/user-attachments/assets/91f412b8-4fc1-482f-9f6e-8be5ea4787c3" />
+
 
 ```powershell
 Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 5 |
@@ -466,6 +488,9 @@ for ($i = 1; $i -le 63; $i++) {
 
 ### 6.5 Preuve de la progression linéaire
 
+<img width="1917" height="1198" alt="Capture d&#39;écran 2026-10-11 220833" src="https://github.com/user-attachments/assets/3c863fab-dc67-4682-bb85-3fe3dc6d4049" />
+<img width="1915" height="995" alt="Capture d&#39;écran 2026-10-11 221110" src="https://github.com/user-attachments/assets/396086ad-679c-4d63-bee6-a607aeca834f" />
+
 ```
 [1/63]  Length=18 : A.127.0.0.1.nip.io
 [10/63] Length=27 : AtomicTeam.127.0.0.1.nip.io
@@ -477,6 +502,10 @@ for ($i = 1; $i -le 63; $i++) {
 ✅ Croissance linéaire confirmée de 18 à 80 caractères sur 63 requêtes.
 
 ### 6.6 Détection côté Wazuh — preuve
+
+<img width="1887" height="717" alt="Capture d&#39;écran 2026-10-11 220629" src="https://github.com/user-attachments/assets/647d069e-a4b0-4fde-a9d7-1f6e2da095fb" />
+<img width="1915" height="995" alt="Capture d&#39;écran 2026-10-11 221110" src="https://github.com/user-attachments/assets/857651b4-5977-44d1-8148-e45469d03f7b" />
+
 
 **Volume :** 32 alertes en ~20 secondes, toutes de type `100204` (Level 12), toutes rattachées à GAGNANT-CLIENT.
 
