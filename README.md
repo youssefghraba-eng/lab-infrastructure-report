@@ -54,25 +54,6 @@ Chaque projet est documenté intégralement et conservé dans ce portfolio afin 
 
 ---
 
-## 📂 Structure du Dépôt
-
-\`\`\`
-```
-lab-infrastructure-report/
-├── README.md              ← Ce fichier
-├── docs/                  ← Rapports détaillés
-│   ├── rapport-atomic-red-team-t1071-004.md
-│   ├── Atomic Red Team-technique T1202.md
-│   ├── Enterprise SOC Lab 2026 — Rapport d'Avancement · Partie 1.md
-│   └── ...
-├── architecture/          ← Schémas réseau
-├── scenarios/             ← Scénarios détaillés
-├── tools/                 ← Configurations outils
-└── screenshots/           ← Captures d'écran
-```
-
-
-
 ## 🔗 Me Contacter
 
 - **LinkedIn :** [linkedin.com/in/youssef-g-74b6b4213](https://linkedin.com/in/youssef-g-74b6b4213)
