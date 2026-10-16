@@ -57,6 +57,7 @@ Chaque projet est documenté intégralement et conservé dans ce portfolio afin 
 ## 📂 Structure du Dépôt
 
 \`\`\`
+```
 lab-infrastructure-report/
 ├── README.md              ← Ce fichier
 ├── docs/                  ← Rapports détaillés
@@ -68,9 +69,9 @@ lab-infrastructure-report/
 ├── scenarios/             ← Scénarios détaillés
 ├── tools/                 ← Configurations outils
 └── screenshots/           ← Captures d'écran
-\`\`\`
+```
 
----
+
 
 ## 🔗 Me Contacter
 
