@@ -18,6 +18,8 @@ Chaque projet est documenté intégralement et conservé dans ce portfolio afin 
 
 ## 📑 Sommaire des Projets
 
+## 📑 Sommaire des Projets
+
 | # | Projet | Statut | Description |
 |---|---|---|---|
 | 1 | [Laboratoire SOC d'entreprise 2026](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/enterprise-soc-lab-partie1.md) | 🟡 En cours | Laboratoire SOC professionnel (SIEM, SOAR, TDIR) |
@@ -26,6 +28,8 @@ Chaque projet est documenté intégralement et conservé dans ce portfolio afin 
 | 4 | [Atomic Red — T1202](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/t1202-atomic-red-team.md) | 🟢 Réalisé | Exécution indirecte de commande (détection) |
 | 5 | [Rapport Sécurité Kali](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/rapport_securite_kali.txt) | 🟢 Réalisé | Tests offensifs et analyse |
 | 6 | [SOC Lab Wazuh / OPNsense](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/rapport-lab-soc-wazuh-opnsense.md) | 🟢 Réalisé | Construction du lab (Parties 1-4) |
+
+---
 
 ---
 
