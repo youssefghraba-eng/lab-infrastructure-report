@@ -21,7 +21,7 @@ Chaque projet est documenté intégralement et conservé dans ce portfolio afin 
 | # | Projet | Statut | Description |
 |---|---|---|---|
 | 1 | [Laboratoire SOC d'entreprise 2026](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/enterprise-soc-lab-partie1.md) | 🟡 En cours | Laboratoire SOC professionnel (SIEM, SOAR, TDIR) |
-| 2 | [Infrastructure de laboratoire](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/infrastructure-automation.md) | 🟢 Réalisé | Laboratoire Rouge & Bleu, fondation de l'équipe |
+| 2 | [Infrastructure & Automatisation](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/infrastructure-automation.md) | 🟢 Réalisé | Laboratoire Rouge & Bleu, fondation de l'équipe |
 | 3 | [Atomic Red — T1071.004 (Test #4)](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/rapport-atomic-red-team-t1071-004-test4.md) | 🟢 Réalisé | Détection DNS Tunneling (session C2 dnscat2) |
 | 4 | [Atomic Red — T1202](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/t1202-atomic-red-team.md) | 🟢 Réalisé | Exécution indirecte de commande (détection) |
 | 5 | [Rapport Sécurité Kali](https://github.com/youssefghraba-eng/lab-infrastructure-report/blob/main/Docs/rapport_securite_kali.txt) | 🟢 Réalisé | Tests offensifs et analyse |
