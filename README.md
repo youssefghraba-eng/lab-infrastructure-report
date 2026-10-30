@@ -17,16 +17,16 @@ Chaque projet est documenté intégralement et conservé dans ce portfolio afin 
 
 ---
 
-## 📑 Sommaire des Projets
+📑 Sommaire des Projets
 
 | # | Projet | Statut | Description |
 |---|---|---|---|
-| 1 | [Enterprise SOC Lab 2026](./docs/Enterprise%20SOC%20Lab%202026%20—%20Rapport%20d'Avancement%20·%20Partie%201.md) | 🟡 En cours | Laboratoire SOC professionnel (SIEM, SOAR, TDIR) |
-| 2 | [Cybersecurity Lab Infrastructure](./docs/) | 🟢 Réalisé | Laboratoire Red & Blue Teaming fondateur |
-| 3 | [Atomic Red Team — T1071.004](./docs/rapport-atomic-red-team-t1071-004.md) | 🟢 Réalisé | Détection DNS Tunneling (3 tests) |
-| 4 | [Atomic Red Team — T1202](./docs/Atomic%20Red%20Team-technique%20T1202.md) | 🟢 Réalisé | Détection Indirect Command Execution |
-| 5 | [Rapport Sécurité Kali](./docs/rapport_securite_kali.txt) | 🟢 Réalisé | Tests offensifs |
-| 6 | [Rapports Lab SOC (Parties 1-4)](./docs/) | 🟢 Réalisé | Construction du lab Wazuh/OPNsense |
+| 1 | [Laboratoire SOC d'entreprise 2026](./Docs/Enterprise%20SOC%20Lab%202026%20—%20Rapport%20d'Avancement%20·%20Partie%201.md) | 🟡 En cours | Laboratoire SOC professionnel (SIEM, SOAR, TDIR) |
+| 2 | [Infrastructure de laboratoire de cybersécurité](./Docs/Infrastructure-&-Automation.md) | 🟢 Réalisé | Laboratoire Rouge & Bleu |
+| 3 | [Équipe Atomic Red — T1071.004](./Docs/rapport-atomic-red-team-t1071-004-test4.md) | 🟢 Réalisé | Détection DNS Tunneling (Test #4) |
+| 4 | [Équipe Atomic Red — T1202](./Docs/Équipe%20Atomic%20Red%20-%20technique%20T1202.md) | 🟢 Réalisé | Exécution indirecte de commande par détection |
+| 5 | [Rapport Sécurité Kali](./Docs/rapport_securite_kali.txt) | 🟢 Réalisé | Tests offensifs |
+| 6 | [SOC du Rapport Lab (Parties 1-4)](./Docs/rapport-lab-soc-wazuh-opnsense.md) | 🟢 Réalisé | Construction du lab Wazuh/OPNsense |
 
 ---
 
