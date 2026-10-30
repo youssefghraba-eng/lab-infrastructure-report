@@ -44,8 +44,8 @@ Start-Dnscat2 -Domain #{domain} -DNSServer #{server_ip}
 
 ## 3. Architecture mise en place pour le test
 
-<img width="1917" height="1198" alt="Capture d&#39;écran 2026-10-25 175917" src="https://github.com/user-attachments/assets/571cc0c0-7491-4639-b5de-3d4bcd7a940c" />
-<img width="1152" height="90" alt="Capture d&#39;écran 2026-10-30 153710" src="https://github.com/user-attachments/assets/67990c59-fdc8-4432-a1ca-f54f91029831" />
+<img width="1152" height="90" alt="Capture d&#39;écran 2026-10-30 153710" src="https://github.com/user-attachments/assets/f9078ca0-1033-4023-b030-9999467506f6" />
+
 
 
 | Machine | Rôle | IP | Outils installés |
@@ -188,29 +188,16 @@ scp root@192.168.56.54:/tmp/dnscat2_final.pcap C:\Users\grimj\Desktop\
 
 <img width="1917" height="1198" alt="Capture d&#39;écran 2026-10-25 175917" src="https://github.com/user-attachments/assets/4b27687d-9cca-4386-966e-c1d13fab2d4f" />
 
-| Horodatage | SID | Action | Source | Port | Destination | Port | Alerte |
-|---|---|---|---|---|---|---|---|
-| 2026-10-25T17:56:18.611877+0000 | 2028880 | autorisé | 192.168.56.61 | 54072 | 192.168.56.1 | 53 | ET MALWARE Anchor_DNS Trickbot DNS Commande CnC - Envoi de données |
-| 2026-10-25T17:56:18.445339+0000 | 2028880 | autorisé | 192.168.56.61 | 54071 | 192.168.56.1 | 53 | ET MALWARE Anchor_DNS Trickbot DNS Commande CnC - Envoi de données |
 
 
 **Détail d'une alerte (fiche complète) :**
 
+
+
 <img width="1917" height="1198" alt="Capture d&#39;écran 2026-10-25 180311" src="https://github.com/user-attachments/assets/0fa07dd0-8e50-4497-bf04-a29c5da5145c" />
 
 
-```
-Horodatage        : 2026-10-25T17:56:18.611877+0000
-Alerte             : ET MALWARE Anchor_DNS Trickbot DNS Commande CnC - Envoi de données
-Alerte SID         : 2028880
-Protocole          : UDP
-Source IP          : 192.168.56.61 (WIN-CLIENT)
-Destination IP     : 192.168.56.1 (OPNsense — DNS)
-Port source        : 54072
-Port destination   : 53
-Interface           : LAN
-Action configurée  : Activé / Alerte
-```
+
 
 **Analyse :** cette alerte provient des règles **ET Open (Emerging Threats)**, et non de la règle personnalisée `custom-dnscat.rules`. C'est un résultat particulièrement intéressant : **la signature structurelle du trafic dnscat2 (format d'encodage DNS, cadence des requêtes) est suffisamment proche de celle du malware bancaire Trickbot** pour déclencher sa règle de détection existante — démonstration que les règles génériques de détection de tunneling DNS couvrent des familles d'outils variées au-delà de leur cible d'origine.
 
@@ -220,25 +207,12 @@ Action configurée  : Activé / Alerte
 
 **Chronologie des alertes capturées sur WIN-CLIENT (agent GAGNANT-CLIENT) :**
 
+
+
+
 <img width="1888" height="741" alt="Capture d&#39;écran 2026-10-25 180242" src="https://github.com/user-attachments/assets/4cbe9fbb-7bcb-444e-9145-556edfcb462a" />
 
-| Heure | Règle | Description | Level |
-|---|---|---|---|
-| 17:43:47.054 | 92032 | Exécution suspecte du shell cmd Windows | 3 |
-| 17:43:47.070 | 67024 | Connexion de service depuis un compte non standard | 3 |
-| 17:43:47.085 | 67028 | Privilèges spéciaux attribués aux nouveaux logons | 3 |
-| 17:43:47.132 | 60106 | Succès de la connexion Windows | 3 |
-| 17:43:47.148 | 67028 | Privilèges spéciaux attribués aux nouveaux logons | 3 |
-| 17:43:47.163 | 60137 | Déconnexion utilisateur Windows | 3 |
-| 17:43:47.195 | 60200 | Réussite de la connexion Cleartext du réseau IIS | 3 |
-| 17:43:47.210 | 67028 | Privilèges spéciaux attribués aux nouveaux logons | 3 |
-| 17:43:47.962 | 92052 | Invite de commande lancée par un processus anormal | 4 |
-| 17:43:47.964 | 92032 | Exécution suspecte du shell cmd Windows | 3 |
-| 17:43:48.023 | 92052 | Invite de commande lancée par un processus anormal | 4 |
-| 17:45:18.818 | **100200** | **Requête DNS détectée : wdcp.microsoft.com** | 5 |
-| 17:45:19.821 | **100200** | **Requête DNS détectée : raw.githubusercontent.com** | 5 |
-| 17:48:52.150 | 92052 | Invite de commande lancée par un processus anormal | 4 |
-| 17:48:52.165 | 92052 | Invite de commande lancée par un processus anormal | 4 |
+
 
 
 **Lecture technique :**
@@ -251,19 +225,10 @@ Action configurée  : Activé / Alerte
 
 ### 6.3 Vérification du Wazuh Manager — agent `server`
 
- <img width="1917" height="1198" alt="Capture d&#39;écran 2026-10-25 175814" src="https://github.com/user-attachments/assets/0293e1aa-409b-4ec7-ac7e-fef8be4364e8" />
-
-
 Côté SERVER01-CORE, vérification du bon fonctionnement de l'agent Wazuh après les opérations de nettoyage des zones DNS `dnscat` :
 
-```powershell
-Import-Module DnsServer
-Get-DnsServerZone | Where-Object { $_.ZoneName -like "*dnscat*" } | ForEach-Object {
-    Remove-DnsServerZone -Name $_.ZoneName -Force
-}
-Restart-Service WazuhSvc
-Get-Service WazuhSvc
-```
+ <img width="1917" height="1198" alt="Capture d&#39;écran 2026-10-25 175814" src="https://github.com/user-attachments/assets/0293e1aa-409b-4ec7-ac7e-fef8be4364e8" />
+
 
 ```
 Status   Name       DisplayName
