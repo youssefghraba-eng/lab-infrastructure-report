@@ -1,0 +1,63 @@
+<!--
+  ==============================================================================
+  Projet : Détection DNS Beaconing / Tunneling (MITRE T1071.004)
+  Auteur : Youssef Ghraba
+  Description : Règles personnalisées Wazuh pour détecter les anomalies DNS 
+                (requêtes TXT suspectes, noms de domaine anormalement longs, 
+                et volume élevé de requêtes).
+  ==============================================================================
+-->
+
+<group name="windows,sysmon,dns,">
+
+  <!-- ============================================ -->
+  <!-- OVERWRITE : Rendre la règle parent Sysmon 22 visible -->
+  <!-- ============================================ -->
+  <rule id="61650" level="4" overwrite="yes">
+    <if_sid>61600</if_sid>
+    <field name="win.system.eventID">^22$</field>
+    <description>Sysmon - Event 22: DNS Query event</description>
+    <options>no_full_log</options>
+    <group>sysmon_event_22,</group>
+  </rule>
+
+  <!-- ============================================ -->
+  <!-- RÈGLE DE BASE : Toute requête DNS Sysmon    -->
+  <!-- ============================================ -->
+  <rule id="100200" level="5">
+    <if_sid>61650</if_sid>
+    <description>DNS Query detected: $(win.eventdata.queryName) (Type: $(win.eventdata.queryType))</description>
+    <mitre><id>T1071.004</id></mitre>
+  </rule>
+
+  <!-- ============================================ -->
+  <!-- REQUÊTE TXT SUSPICIEUSE (Type 16)          -->
+  <!-- ============================================ -->
+  <rule id="100201" level="10">
+    <if_sid>100200</if_sid>
+    <field name="win.eventdata.queryType">16</field>
+    <description>HIGH: Suspicious TXT DNS query: $(win.eventdata.queryName)</description>
+    <mitre><id>T1071.004</id></mitre>
+  </rule>
+
+  <!-- ============================================ -->
+  <!-- REQUÊTE DNS LONGUE (DGA ou tunneling)       -->
+  <!-- ============================================ -->
+  <rule id="100202" level="10">
+    <if_sid>100200</if_sid>
+    <field name="win.eventdata.queryName" type="pcre2">^.{50,}$</field>
+    <description>HIGH: Long DNS query detected: $(win.eventdata.queryName)</description>
+    <mitre><id>T1071.004</id></mitre>
+  </rule>
+
+  <!-- ============================================ -->
+  <!-- HAUT VOLUME DNS (30+ requêtes / 60s)         -->
+  <!-- ============================================ -->
+  <rule id="100203" level="12" frequency="30" timeframe="60">
+    <if_matched_sid>100200</if_matched_sid>
+    <same_source_ip />
+    <description>CRITICAL: High volume DNS queries ($(frequency) in $(timeframe)s) - DNS Tunneling suspected!</description>
+    <mitre><id>T1071.004</id></mitre>
+  </rule>
+
+</group>
