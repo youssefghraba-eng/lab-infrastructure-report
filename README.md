@@ -16,6 +16,14 @@ Chaque projet est documenté intégralement et conservé dans ce portfolio afin 
 
 ---
 
+### 🛡️ Ingénierie de Détection : Règles Wazuh (DNS Tunneling)
+
+J'ai développé et testé des règles personnalisées Wazuh pour détecter les comportements suspects liés au DNS (MITRE T1071.004).
+
+![Guide des règles Wazuh](images/linkedin_wazuh_regles_guide.png)
+
+👉 [Voir le code XML des règles](docs/wazuh_rules.xml)
+
 ## 📑 Sommaire des Projets
 
 | # | Projet | Statut | Description |
