@@ -1,5 +1,5 @@
 [README_Fraud_AML_KYC.md](https://github.com/user-attachments/files/34820620/README_Fraud_AML_KYC.md)
-# 🛡️ Youssef Ghraba — Fraud Monitoring & Analyse de risques | AML / KYC | Cybersécurité
+# 🛡️ Youssef Ghraba — Cyber Financial Crime Investigator | Fraud Monitoring & AML / KYC
 
 ![Focus](https://img.shields.io/badge/Focus-Fraud%20Monitoring%20%26%20AML%2FKYC-1B2A41?style=flat-square)
 ![Cyber](https://img.shields.io/badge/Cybers%C3%A9curit%C3%A9-D%C3%A9tection%20%26%20Investigation-C4954A?style=flat-square)
@@ -18,6 +18,8 @@ Les outils sont ceux d'un SOC ; la méthode est celle d'un analyste fraude :
 **signal → alerte → triage → investigation → décision documentée**
 
 Chaque projet est documenté de façon reproductible, afin de tracer l'évolution de mes compétences. Mon objectif : démontrer une maîtrise pratique de la détection, de l'analyse et de la réponse aux incidents, en environnement on-premise (extension cloud en préparation).
+
+Extension prévue : simulation de détection de fraudes transactionnelles (Structuring) via un moteur de règles open-source (ezrules).
 
 ---
 
